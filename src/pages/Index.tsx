@@ -56,11 +56,27 @@ const Index = () => {
             className="w-32 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent mx-auto"
           />
 
+          {/* Email contact */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="pt-4"
+          >
+            <a
+              href="mailto:emilie@speech.ch"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 text-base md:text-lg font-medium group"
+            >
+              <span className="group-hover:translate-x-[-4px] transition-transform duration-300">✉</span>
+              emilie@speech.ch
+            </a>
+          </motion.div>
+
           {/* Footer note */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
+            transition={{ duration: 0.8, delay: 1 }}
             className="text-sm text-muted-foreground/60 font-light"
           >
             We're preparing something special. Check back soon.
