@@ -1,18 +1,18 @@
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const Index = () => {
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-accent/30 to-background">
       <div className="container mx-auto px-6 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center space-y-12">
-          {/* Decorative element */}
+          {/* Logo */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center shadow-lg"
           >
-            <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/80" />
+            <img src={logo} alt="EC Speech & Language Therapy" className="max-w-xs md:max-w-sm mx-auto" />
           </motion.div>
 
           {/* Main heading */}
