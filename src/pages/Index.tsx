@@ -7,13 +7,15 @@ const Index = () => {
       <div className="container mx-auto px-6 py-20 md:py-32">
         <div className="max-w-4xl mx-auto text-center space-y-12">
           {/* Logo */}
-          <motion.div
+          <motion.img
+            src={logo}
+            alt="EC Speech & Language Therapy"
+            className="max-w-xs md:max-w-sm mx-auto cursor-pointer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <img src={logo} alt="EC Speech & Language Therapy" className="max-w-xs md:max-w-sm mx-auto" />
-          </motion.div>
+            whileHover={{ scale: 1.05, rotate: 2 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+          />
 
           {/* Main heading */}
           <motion.div
