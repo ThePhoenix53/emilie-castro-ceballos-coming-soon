@@ -44,7 +44,7 @@ const Index = () => {
               English-based speech pathology services
             </p>
             <p className="text-base md:text-lg text-muted-foreground/80 leading-relaxed font-light">
-              Located in central Switzerland, providing professional support for communication and speech development
+              Located in Switzerland, providing professional support for communication and speech & language development
             </p>
           </motion.div>
 
@@ -64,7 +64,7 @@ const Index = () => {
             className="pt-4"
           >
             <a
-              href="mailto:emilie@speech.ch"
+              href="mailto:emilie@sltherapy.ch"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 text-base md:text-lg font-medium group"
             >
               <span className="group-hover:translate-x-[-4px] transition-transform duration-300">✉</span>

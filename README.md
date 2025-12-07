@@ -1,22 +1,16 @@
-# Welcome to your Lovable project
+# Welcome to Emilie's Coming Soon Page!
 
-## Project info
+## Project Website
 
-**URL**: https://lovable.dev/projects/a01c67de-f10e-460a-a4cd-276cefcac6c0
+**URL**: sltherapy.ch
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/a01c67de-f10e-460a-a4cd-276cefcac6c0) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -60,14 +54,93 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
+## Deploying to GitHub Pages with Custom Domain (sltherapy.ch)
 
-Simply open [Lovable](https://lovable.dev/projects/a01c67de-f10e-460a-a4cd-276cefcac6c0) and click on Share -> Publish.
+This project is configured to deploy to your custom domain **sltherapy.ch**. Follow these steps:
 
-## Can I connect a custom domain to my Lovable project?
+### Initial Setup
 
-Yes, you can!
+1. **Push your code to GitHub** (if not already done):
+   ```sh
+   git add .
+   git commit -m "Configure for custom domain deployment"
+   git push origin main
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+2. **Configure DNS settings at your domain registrar**:
+   - Add an **A record** pointing to GitHub's IP addresses:
+     - `185.199.108.153`
+     - `185.199.109.153`
+     - `185.199.110.153`
+     - `185.199.111.153`
+   - OR add a **CNAME record** for `www` subdomain pointing to: `yourusername.github.io`
+   
+3. **Enable GitHub Pages in repository settings**:
+   - Go to your repository on GitHub
+   - Click on "Settings" → "Pages" (in the left sidebar)
+   - Under "Build and deployment" → "Source", select **"GitHub Actions"**
+   - Under "Custom domain", enter: `sltherapy.ch`
+   - Click "Save" - GitHub will verify your domain
+   - Check "Enforce HTTPS" once DNS propagates (may take 24-48 hours)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Automatic Deployment
+
+Every time you push to the `main` branch, GitHub Actions will automatically:
+- Build your project
+- Deploy it to GitHub Pages
+- Serve it from your custom domain: `https://sltherapy.ch`
+
+### Manual Deployment (Alternative)
+
+If you prefer manual deployment:
+```sh
+npm run deploy
+```
+
+### DNS Configuration Details
+
+**Option 1: Apex Domain (sltherapy.ch)**
+Add these A records:
+```
+Type: A
+Name: @
+Value: 185.199.108.153
+
+Type: A
+Name: @
+Value: 185.199.109.153
+
+Type: A
+Name: @
+Value: 185.199.110.153
+
+Type: A
+Name: @
+Value: 185.199.111.153
+```
+
+**Option 2: WWW Subdomain (www.sltherapy.ch)**
+Add this CNAME record:
+```
+Type: CNAME
+Name: www
+Value: yourusername.github.io
+```
+
+### Important Notes
+
+- **CNAME file**: Already created in `public/CNAME` with your domain
+- **Base path**: Set to `"/"` in `vite.config.ts` for custom domain
+- **HTTPS**: Will be available after DNS propagation (24-48 hours)
+- **DNS Propagation**: May take up to 48 hours for changes to take effect worldwide
+- **Verify Domain**: GitHub will add a TXT record for verification - follow instructions in GitHub Pages settings
+- The project uses HashRouter for client-side routing compatibility
+
+### Troubleshooting
+
+- **DNS not working?** Use [DNS Checker](https://dnschecker.org) to verify propagation
+- **Certificate errors?** Wait 24-48 hours for DNS to fully propagate
+- **404 errors?** Ensure the CNAME file contains only your domain name
+- **Need help?** Check GitHub's [custom domain documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+
+

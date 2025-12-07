@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Set base path to "/" for custom domain (sltherapy.ch)
+  // If deploying to github.io subdirectory, change to: "/repo-name/"
+  base: "/",
   server: {
     host: "::",
     port: 8080,
