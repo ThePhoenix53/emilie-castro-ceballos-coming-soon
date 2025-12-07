@@ -70,7 +70,7 @@ const Index = () => {
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 text-base md:text-lg font-medium group"
             >
               <span className="group-hover:translate-x-[-4px] transition-transform duration-300">✉</span>
-              emilie@speech.ch
+              emilie@sltherapy.ch
             </a>
           </motion.div>
 
