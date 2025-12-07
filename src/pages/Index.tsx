@@ -43,7 +43,7 @@ const Index = () => {
             className="max-w-2xl mx-auto space-y-6"
           >
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light">
-              English-based speech pathology services
+              English-based speech therapy services
             </p>
             <p className="text-base md:text-lg text-muted-foreground/80 leading-relaxed font-light">
               Located in Switzerland, providing professional support for communication and speech & language development
