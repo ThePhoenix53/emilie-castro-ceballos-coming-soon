@@ -13,7 +13,7 @@ const Index = () => {
             className="max-w-xs md:max-w-sm mx-auto cursor-pointer"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            whileHover={{ scale: 1.05, rotate: 2 }}
+            whileHover={{ scale: 1.05, rotate: 0 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
           />
 
@@ -65,13 +65,15 @@ const Index = () => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="pt-4"
           >
-            <a
+            <motion.a
               href="mailto:emilie@sltherapy.ch"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-all duration-300 text-base md:text-lg font-medium group"
+              whileHover={{ scale: 1.20 }}
+              transition={{ duration: 0.05 }}
             >
-              <span className="group-hover:translate-x-[-4px] transition-transform duration-300">✉</span>
+              <span className="group-hover:translate-y-[-4px] transition-transform duration-300">✉</span>
               emilie@sltherapy.ch
-            </a>
+            </motion.a>
           </motion.div>
 
           {/* Footer note */}
