@@ -25,7 +25,7 @@ const Index = () => {
             className="space-y-6"
           >
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground tracking-tight">
-              Emilie Castro Ceballos
+              Ethan Castro Ceballos
             </h1>
             
             <div className="inline-block">
