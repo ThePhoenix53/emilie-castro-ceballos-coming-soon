@@ -16,7 +16,6 @@ export default {
       fontFamily: {
         sans: ['Nunito', 'Inter', 'system-ui', 'sans-serif'],
         serif: ['Playfair Display', 'serif'],
-        script: ['Satisfy', 'cursive'],
       },
       colors: {
         border: "hsl(var(--border))",

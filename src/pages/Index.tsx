@@ -94,41 +94,26 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-accent/30 to-background">
+      {/* Visually hidden h1 for SEO (logo serves as the visible heading) */}
+      <h1 className="sr-only">Emilie Castro Ceballos – Speech &amp; Language Therapy in Zug &amp; Luzern</h1>
+
       {/* Hero Section */}
-      <section aria-label="Introduction" className="container mx-auto px-6 py-6 md:py-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
+      <section aria-label="Introduction" className="container mx-auto px-6 pt-6 pb-2 md:pt-10 md:pb-4">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <motion.img
             src={logo}
             alt="Emilie Speech Language Therapy – logo with children climbing a mountain"
-            className="max-w-xs md:max-w-sm mx-auto"
+            className="max-w-sm md:max-w-md lg:max-w-lg mx-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
-
-          {/* Main heading */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-4"
-          >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground tracking-tight">
-              <span className="font-script text-primary text-5xl md:text-7xl lg:text-8xl">Emilie</span>
-              <br />
-              <span className="text-3xl md:text-4xl lg:text-5xl">Castro Ceballos</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-primary font-semibold uppercase tracking-widest">
-              Speech & Language Therapy
-            </p>
-          </motion.div>
         </div>
       </section>
 
       {/* About Section */}
-      <section aria-label="About the practice" className="container mx-auto px-6 py-6 md:py-8">
+      <section aria-label="About the practice" className="container mx-auto px-6 pt-2 pb-6 md:pt-4 md:pb-8">
         <motion.article
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
