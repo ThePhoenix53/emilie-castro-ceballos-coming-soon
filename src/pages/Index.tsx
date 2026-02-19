@@ -98,13 +98,13 @@ const Index = () => {
       <h1 className="sr-only">Emilie Castro Ceballos – Speech &amp; Language Therapy in Zug &amp; Luzern</h1>
 
       {/* Hero Section */}
-      <section aria-label="Introduction" className="container mx-auto px-6 pt-6 pb-2 md:pt-10 md:pb-4">
+      <section aria-label="Introduction" className="container mx-auto px-4 sm:px-6 pt-6 pb-2 md:pt-10 md:pb-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Logo */}
           <motion.img
             src={logo}
             alt="Emilie Speech Language Therapy – logo with children climbing a mountain"
-            className="max-w-sm md:max-w-md lg:max-w-lg mx-auto"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -113,18 +113,18 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section aria-label="About the practice" className="container mx-auto px-6 pt-2 pb-6 md:pt-4 md:pb-8">
+      <section aria-label="About the practice" className="container mx-auto px-4 sm:px-6 pt-2 pb-6 md:pt-4 md:pb-8">
         <motion.article
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-border/50">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-border/50">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
               About My Practice
             </h2>
-            <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+            <div className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
                 Welcome! I provide professional speech and language therapy services in the
                 <span className="font-medium text-foreground"> Zug and Luzern area</span> of central Switzerland.
@@ -143,21 +143,21 @@ const Index = () => {
       </section>
 
       {/* Contact Information */}
-      <section aria-label="Contact information" className="container mx-auto px-6 py-6">
+      <section aria-label="Contact information" className="container mx-auto px-4 sm:px-6 py-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="max-w-3xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
             Get In Touch
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-6">
             <motion.a
               href="mailto:emilie@sltherapy.ch"
-              className="flex flex-col items-center gap-3 p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/50 transition-colors duration-300 group"
+              className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50 hover:border-primary/50 transition-colors duration-300 group"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
@@ -173,7 +173,7 @@ const Index = () => {
             </motion.a>
 
             <motion.div
-              className="flex flex-col items-center gap-3 p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50"
+              className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7 }}
@@ -188,7 +188,7 @@ const Index = () => {
             </motion.div>
 
             <motion.div
-              className="flex flex-col items-center gap-3 p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50"
+              className="flex flex-col items-center gap-2 sm:gap-3 p-4 sm:p-6 bg-card/50 backdrop-blur-sm rounded-xl border border-border/50"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8 }}
@@ -206,15 +206,15 @@ const Index = () => {
       </section>
 
       {/* Contact Form */}
-      <section aria-label="Contact form" className="container mx-auto px-6 py-6 pb-12">
+      <section aria-label="Contact form" className="container mx-auto px-4 sm:px-6 py-6 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.9 }}
           className="max-w-2xl mx-auto"
         >
-          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-lg border border-border/50">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">
+          <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-border/50">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">
               Send an Inquiry
             </h2>
             <Form {...form}>
@@ -333,8 +333,8 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="border-t border-border/50 bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto px-6 py-4">
-          <p className="text-center text-sm text-muted-foreground">
+        <div className="container mx-auto px-4 sm:px-6 py-4">
+          <p className="text-center text-xs sm:text-sm text-muted-foreground">
             © {new Date().getFullYear()} Emilie Castro Ceballos - Speech & Language Therapy. All rights reserved.
           </p>
         </div>
