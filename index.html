@@ -1,20 +1,102 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="light" style="color-scheme: light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emilie - Speech & Language Pathology</title>
-    <meta name="description" content="English-based speech & language therapy services in Switzerland - Coming Soon" />
+    <meta name="color-scheme" content="light only" />
+
+    <!-- Primary Meta Tags -->
+    <title>Emilie Castro Ceballos – Speech & Language Therapy | Zug & Luzern, Switzerland</title>
+    <meta name="description" content="Professional English-language speech and language therapy for children and teenagers in Zug and Luzern, central Switzerland. Personalised support by Emilie Castro Ceballos." />
     <meta name="author" content="Emilie Castro Ceballos" />
+    <meta name="keywords" content="speech therapy, language therapy, Logopädie, speech pathologist, Zug, Luzern, Lucerne, central Switzerland, children, teenagers, English, Emilie Castro Ceballos" />
 
-    <meta property="og:title" content="Emilie - Speech & Language Pathology" />
-    <meta property="og:description" content="English-based speech & language therapy services in Switzerland - Coming Soon" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://sltherapy.ch/" />
+
+    <!-- Language / Region -->
+    <link rel="alternate" hreflang="en" href="https://sltherapy.ch/" />
+    <link rel="alternate" hreflang="x-default" href="https://sltherapy.ch/" />
+    <meta name="geo.region" content="CH-ZG" />
+    <meta name="geo.placename" content="Zug" />
+
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sltherapy.ch/" />
+    <meta property="og:title" content="Emilie Castro Ceballos – Speech & Language Therapy | Zug & Luzern" />
+    <meta property="og:description" content="Professional English-language speech and language therapy for children and teenagers in central Switzerland." />
+    <meta property="og:image" content="https://sltherapy.ch/og-image.png" />
+    <meta property="og:locale" content="en_CH" />
+    <meta property="og:site_name" content="Emilie Speech Language Therapy" />
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Emilie Castro Ceballos – Speech & Language Therapy | Zug & Luzern" />
+    <meta name="twitter:description" content="Professional English-language speech and language therapy for children and teenagers in central Switzerland." />
+    <meta name="twitter:image" content="https://sltherapy.ch/og-image.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Preconnect for Google Fonts (performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Structured Data: LocalBusiness (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "HealthBusiness",
+        "name": "Emilie Speech Language Therapy",
+        "description": "Professional English-language speech and language therapy for children and teenagers in Zug and Luzern, central Switzerland.",
+        "url": "https://sltherapy.ch",
+        "email": "emilie@sltherapy.ch",
+        "image": "https://sltherapy.ch/og-image.png",
+        "address": {
+          "@type": "PostalAddress",
+          "addressRegion": "Zug / Luzern",
+          "addressCountry": "CH"
+        },
+        "areaServed": [
+          { "@type": "City", "name": "Zug" },
+          { "@type": "City", "name": "Luzern" }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Emilie Castro Ceballos",
+          "jobTitle": "Speech-Language Pathologist"
+        },
+        "medicalSpecialty": "SpeechPathology",
+        "availableService": {
+          "@type": "MedicalTherapy",
+          "name": "Speech and Language Therapy",
+          "description": "Personalised speech and language therapy for children and teenagers"
+        },
+        "inLanguage": ["en", "de", "fr"]
+      }
+    </script>
   </head>
 
   <body>
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+      (function(l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location));
+    </script>
     <div id="root"></div>
+    <noscript>
+      <h1>Emilie Castro Ceballos – Speech &amp; Language Therapy</h1>
+      <p>Professional English-language speech and language therapy for children and teenagers in Zug and Luzern, central Switzerland.</p>
+      <p>Contact: <a href="mailto:emilie@sltherapy.ch">emilie@sltherapy.ch</a></p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

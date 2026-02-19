@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&family=Nunito:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,40 +10,40 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 45 20% 96%;
-    --foreground: 180 15% 15%;
+    --background: 40 33% 97%;
+    --foreground: 20 15% 20%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 180 15% 15%;
+    --card: 40 30% 99%;
+    --card-foreground: 20 15% 20%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 180 15% 15%;
+    --popover-foreground: 20 15% 20%;
 
-    --primary: 170 45% 45%;
+    --primary: 22 72% 61%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 25% 88%;
-    --secondary-foreground: 180 15% 15%;
+    --secondary: 40 30% 90%;
+    --secondary-foreground: 20 15% 20%;
 
-    --muted: 40 20% 92%;
-    --muted-foreground: 180 10% 45%;
+    --muted: 40 25% 93%;
+    --muted-foreground: 20 10% 45%;
 
-    --accent: 165 50% 92%;
-    --accent-foreground: 170 45% 35%;
+    --accent: 145 35% 92%;
+    --accent-foreground: 145 40% 30%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 15% 88%;
-    --input: 40 15% 88%;
-    --ring: 170 45% 45%;
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 22 72% 61%;
 
     --radius: 0.75rem;
     
     /* Custom design tokens */
-    --gradient-calm: linear-gradient(135deg, hsl(170 45% 55%) 0%, hsl(165 40% 65%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(45 20% 98%) 0%, hsl(40 25% 94%) 100%);
-    --shadow-soft: 0 20px 60px -15px hsl(170 45% 45% / 0.15);
+    --gradient-calm: linear-gradient(135deg, hsl(22 72% 66%) 0%, hsl(28 65% 70%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(40 33% 98%) 0%, hsl(40 30% 95%) 100%);
+    --shadow-soft: 0 20px 60px -15px hsl(22 72% 61% / 0.15);
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 
     --sidebar-background: 0 0% 98%;
@@ -62,37 +64,37 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 180 20% 8%;
+    --background: 20 15% 8%;
     --foreground: 40 20% 92%;
 
-    --card: 180 15% 12%;
+    --card: 20 12% 12%;
     --card-foreground: 40 20% 92%;
 
-    --popover: 180 15% 12%;
+    --popover: 20 12% 12%;
     --popover-foreground: 40 20% 92%;
 
-    --primary: 170 45% 55%;
-    --primary-foreground: 180 20% 8%;
+    --primary: 22 72% 61%;
+    --primary-foreground: 20 15% 8%;
 
-    --secondary: 180 15% 15%;
+    --secondary: 20 12% 15%;
     --secondary-foreground: 40 20% 92%;
 
-    --muted: 180 15% 15%;
+    --muted: 20 12% 15%;
     --muted-foreground: 40 15% 65%;
 
-    --accent: 170 40% 20%;
-    --accent-foreground: 170 45% 85%;
+    --accent: 145 30% 18%;
+    --accent-foreground: 145 40% 80%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 180 15% 20%;
-    --input: 180 15% 20%;
-    --ring: 170 45% 55%;
-    
-    --gradient-calm: linear-gradient(135deg, hsl(170 45% 45%) 0%, hsl(165 40% 55%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(180 20% 10%) 0%, hsl(180 15% 12%) 100%);
-    --shadow-soft: 0 20px 60px -15px hsl(170 45% 55% / 0.25);
+    --border: 20 12% 20%;
+    --input: 20 12% 20%;
+    --ring: 22 72% 61%;
+
+    --gradient-calm: linear-gradient(135deg, hsl(22 72% 55%) 0%, hsl(28 65% 60%) 100%);
+    --gradient-soft: linear-gradient(180deg, hsl(20 15% 10%) 0%, hsl(20 12% 12%) 100%);
+    --shadow-soft: 0 20px 60px -15px hsl(22 72% 61% / 0.25);
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -112,13 +114,20 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "liga" 1, "kern" 1;
+    font-family: 'Nunito', 'Inter', system-ui, sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 600;
-    letter-spacing: -0.02em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+/* Thinner rendering for the script / logo font */
+.font-script {
+  -webkit-text-stroke: 1px hsl(var(--background));
+  paint-order: stroke fill;
+  font-weight: 400;
+}
+
