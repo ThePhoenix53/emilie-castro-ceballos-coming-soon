@@ -7,6 +7,7 @@ import * as z from "zod";
 import { toast } from "sonner";
 import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
+import spaLogo from "@/assets/spa-cpsp-logo.png";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -74,16 +75,16 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-accent/30 to-background">
       {/* Visually hidden h1 for SEO (logo serves as the visible heading) */}
-      <h1 className="sr-only">Emilie Castro Ceballos – Speech &amp; Language Therapy in Zug &amp; Luzern</h1>
+      <h1 className="sr-only">Emilie Castro Ceballos – Speech &amp; Language Therapy for Children &amp; Adolescents in Zug &amp; Luzern, Switzerland</h1>
 
       {/* Hero Section */}
       <section aria-label="Introduction" className="container mx-auto px-4 sm:px-6 pt-6 pb-2 md:pt-10 md:pb-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center">
           {/* Logo */}
           <motion.img
             src={logo}
             alt="Emilie Speech Language Therapy – logo with children climbing a mountain"
-            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto"
+            className="w-full max-w-[12rem] sm:max-w-[14rem] md:max-w-xs lg:max-w-sm mx-auto"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -101,24 +102,40 @@ const Index = () => {
         >
           <div className="bg-card/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg border border-border/50">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-4 text-center">
-              About My Practice
+              About Me
             </h2>
             <div className="space-y-4 text-base sm:text-lg text-muted-foreground leading-relaxed">
               <p>
-                Welcome! I provide professional speech and language therapy services in the
-                <span className="font-medium text-foreground"> Zug and Luzern area</span> of central Switzerland.
+                Welcome! My name is Emilie, and I am a Speech and Language Therapist providing support for English-speaking children and adolescents. Since moving to Switzerland from Australia in 2022, I have had the opportunity to work within international schools, and I am now excited to offer my services privately to families within the Luzern and Zug regions.
               </p>
               <p>
-                I specialize in working with <span className="font-medium text-foreground">children and teenagers</span>,
-                helping them develop their communication skills, overcome speech challenges, and reach their full potential.
+                I am passionate about collaborating with multicultural and multilingual families. My goal is to help children and young adults achieve their full communication potential while ensuring they feel confident and empowered every step of the way.
               </p>
               <p>
-                With English-based therapy services, I offer personalized support tailored to each individual's
-                unique needs in a caring and professional environment.
+                In my practice, I take a neuro-affirming approach to supporting neurodivergent children. I have specialised training in Gestalt language development, literacy intervention, Childhood Apraxia of Speech, and the Greenspan Floortime model. While my clinical interests are broad, I am especially passionate about receptive and expressive language development, as well as literacy.
+              </p>
+              <p>
+                Please feel free to get in touch for more information. I look forward to connecting with you!
               </p>
             </div>
           </div>
         </motion.article>
+      </section>
+
+      {/* Certification Badge */}
+      <section aria-label="Professional certification" className="container mx-auto px-4 sm:px-6 pb-6 md:pb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="max-w-3xl mx-auto flex flex-col items-center"
+        >
+          <img
+            src={spaLogo}
+            alt="Speech Pathology Australia – Certified Practising Speech Pathologist"
+            className="w-full max-w-[16rem] sm:max-w-[18rem] md:max-w-[20rem]"
+          />
+        </motion.div>
       </section>
 
       {/* Contact Information */}
