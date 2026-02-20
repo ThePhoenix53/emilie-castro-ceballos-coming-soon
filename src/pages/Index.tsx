@@ -1,11 +1,11 @@
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
-import { useCallback, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
-import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { Button } from "@/components/ui/button";
 import {
@@ -19,13 +19,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-/** Generate a simple random math challenge */
-function generateChallenge() {
-  const a = Math.floor(Math.random() * 10) + 1;
-  const b = Math.floor(Math.random() * 10) + 1;
-  return { a, b, answer: a + b };
-}
-
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -33,14 +26,10 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
   // Honeypot – invisible field that bots auto-fill
   website: z.string().max(0, { message: "Bot detected." }).optional(),
-  captcha: z.string().min(1, { message: "Please answer the security question." }),
 });
 
 const Index = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [challenge, setChallenge] = useState(generateChallenge);
-
-  const refreshChallenge = useCallback(() => setChallenge(generateChallenge()), []);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -50,7 +39,6 @@ const Index = () => {
       phone: "",
       message: "",
       website: "",   // honeypot
-      captcha: "",
     },
   });
 
@@ -58,14 +46,6 @@ const Index = () => {
     // Honeypot check – real users never fill this
     if (values.website) {
       toast.error("Spam detected.");
-      return;
-    }
-
-    // Math captcha check
-    if (parseInt(values.captcha, 10) !== challenge.answer) {
-      form.setError("captcha", { message: "Incorrect answer. Please try again." });
-      refreshChallenge();
-      form.setValue("captcha", "");
       return;
     }
 
@@ -84,7 +64,6 @@ const Index = () => {
       );
       toast.success("Message sent successfully!");
       form.reset();
-      refreshChallenge();
     } catch {
       toast.error("Failed to send message. Please try again.");
     } finally {
@@ -295,28 +274,6 @@ const Index = () => {
                   />
                 </div>
 
-                {/* Simple math captcha */}
-                <FormField
-                  control={form.control}
-                  name="captcha"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="flex items-center gap-2">
-                        <ShieldCheck className="w-4 h-4 text-primary" />
-                        Security check: What is {challenge.a} + {challenge.b}? *
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="number"
-                          inputMode="numeric"
-                          placeholder="Your answer"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
 
                 <Button
                   type="submit"
