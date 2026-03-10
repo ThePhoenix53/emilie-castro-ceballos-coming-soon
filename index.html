@@ -1,13 +1,25 @@
 <!doctype html>
 <html lang="en" class="light" style="color-scheme: light">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZGYE34MWF"></script>
+    <!-- Google Analytics (loaded conditionally after cookie consent) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-WZGYE34MWF');
+      window.loadGA = function() {
+        if (document.getElementById('ga-script')) return;
+        var s = document.createElement('script');
+        s.id = 'ga-script';
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-WZGYE34MWF';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-WZGYE34MWF');
+      };
+      // Auto-load if user previously consented
+      if (localStorage.getItem('cookie-consent') === 'accepted') {
+        window.loadGA();
+      }
     </script>
 
     <meta charset="UTF-8" />
@@ -50,6 +62,7 @@
     <!-- Preconnect for Google Fonts (performance) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" />
 
     <!-- Structured Data: LocalBusiness (JSON-LD) -->
     <script type="application/ld+json">

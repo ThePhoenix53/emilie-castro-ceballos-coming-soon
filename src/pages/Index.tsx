@@ -19,6 +19,8 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import BackToTop from "@/components/BackToTop";
+import CookieConsent from "@/components/CookieConsent";
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -74,11 +76,19 @@ const Index = () => {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-background via-accent/30 to-background">
+      {/* Skip link for keyboard / screen reader users */}
+      <a
+        href="#contact-form"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md focus:shadow-lg"
+      >
+        Skip to contact form
+      </a>
+
       {/* Visually hidden h1 for SEO (logo serves as the visible heading) */}
       <h1 className="sr-only">Emilie Castro Ceballos – Speech &amp; Language Therapy for Children &amp; Adolescents in Zug &amp; Luzern, Switzerland</h1>
 
       {/* Hero Section */}
-      <section aria-label="Introduction" className="container mx-auto px-4 sm:px-6 pt-6 pb-2 md:pt-10 md:pb-4">
+      <section id="hero" aria-label="Introduction" className="container mx-auto px-4 sm:px-6 pt-6 pb-2 md:pt-10 md:pb-4">
         <div className="max-w-3xl mx-auto text-center">
           {/* Logo */}
           <motion.img
@@ -93,7 +103,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section aria-label="About the practice" className="container mx-auto px-4 sm:px-6 pt-2 pb-6 md:pt-4 md:pb-8">
+      <section id="about" aria-label="About the practice" className="container mx-auto px-4 sm:px-6 pt-2 pb-6 md:pt-4 md:pb-8">
         <motion.article
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -123,7 +133,7 @@ const Index = () => {
       </section>
 
       {/* Certification Badge */}
-      <section aria-label="Professional certification" className="container mx-auto px-4 sm:px-6 pb-6 md:pb-8">
+      <section id="certification" aria-label="Professional certification" className="container mx-auto px-4 sm:px-6 pb-6 md:pb-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -133,13 +143,14 @@ const Index = () => {
           <img
             src={spaLogo}
             alt="Speech Pathology Australia – Certified Practising Speech Pathologist"
+            loading="lazy"
             className="w-full max-w-[16rem] sm:max-w-[18rem] md:max-w-[20rem]"
           />
         </motion.div>
       </section>
 
       {/* Contact Information */}
-      <section aria-label="Contact information" className="container mx-auto px-4 sm:px-6 py-6">
+      <section id="contact" aria-label="Contact information" className="container mx-auto px-4 sm:px-6 py-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -202,7 +213,7 @@ const Index = () => {
       </section>
 
       {/* Contact Form */}
-      <section aria-label="Contact form" className="container mx-auto px-4 sm:px-6 py-6 pb-12">
+      <section id="contact-form" aria-label="Contact form" className="container mx-auto px-4 sm:px-6 py-6 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -313,6 +324,9 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      <BackToTop />
+      <CookieConsent />
     </main>
   );
 };
