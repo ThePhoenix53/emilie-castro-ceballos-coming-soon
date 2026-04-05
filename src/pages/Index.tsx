@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { toast } from "sonner";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { ClockAlert, Mail, MapPin, Phone } from "lucide-react";
 import logo from "@/assets/logo.png";
 import spaLogo from "@/assets/spa-cpsp-logo.png";
 import { Button } from "@/components/ui/button";
@@ -21,6 +21,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
+
+// ─── WAITLIST TOGGLE ───────────────────────────────────────────────
+// Set to true when bookings are full; set to false to remove the banner.
+const WAITLIST_ACTIVE = true;
+// ───────────────────────────────────────────────────────────────────
 
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -86,6 +91,23 @@ const Index = () => {
 
       {/* Visually hidden h1 for SEO (logo serves as the visible heading) */}
       <h1 className="sr-only">Emilie Castro Ceballos – Speech &amp; Language Therapy for Children &amp; Adolescents in Zug &amp; Luzern, Switzerland</h1>
+
+      {/* Waitlist Banner */}
+      {WAITLIST_ACTIVE && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="bg-amber-50 border-b border-amber-200"
+        >
+          <div className="container mx-auto px-4 sm:px-6 py-3 flex items-center justify-center gap-3 text-amber-800">
+            <ClockAlert className="w-5 h-5 flex-shrink-0" />
+            <p className="text-sm sm:text-base font-medium text-center">
+              My books are currently full. New inquiries will be added to the waitlist.
+            </p>
+          </div>
+        </motion.div>
+      )}
 
       {/* Hero Section */}
       <section id="hero" aria-label="Introduction" className="container mx-auto px-4 sm:px-6 pt-6 pb-2 md:pt-10 md:pb-4">
@@ -308,7 +330,7 @@ const Index = () => {
                   className="w-full text-lg py-6"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Inquiry"}
+                  {isSubmitting ? "Sending..." : WAITLIST_ACTIVE ? "Join Waitlist" : "Send Inquiry"}
                 </Button>
               </form>
             </Form>
