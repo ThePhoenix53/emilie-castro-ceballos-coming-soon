@@ -103,7 +103,7 @@ const Index = () => {
           <div className="container mx-auto px-4 sm:px-6 py-3 flex items-center justify-center gap-3 text-amber-800">
             <ClockAlert className="w-5 h-5 flex-shrink-0" />
             <p className="text-sm sm:text-base font-medium text-center">
-              My books are currently full. New inquiries will be added to the waitlist.
+              My caseload is currently full. New inquiries will be added to the waitlist.
             </p>
           </div>
         </motion.div>
