@@ -24,7 +24,7 @@ import CookieConsent from "@/components/CookieConsent";
 
 // ─── WAITLIST TOGGLE ───────────────────────────────────────────────
 // Set to true when bookings are full; set to false to remove the banner.
-const WAITLIST_ACTIVE = true;
+const WAITLIST_ACTIVE = false;
 // ───────────────────────────────────────────────────────────────────
 
 const formSchema = z.object({
